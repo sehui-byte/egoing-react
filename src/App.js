@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Subject from "./components/Subject";
 import TOC from "./components/TOC";
-import Content from "./components/Content";
 import Control from "./components/Control";
 import ReadContent from "./components/ReadContent";
 import CreateContent from "./components/CreateContent";
@@ -48,8 +47,8 @@ class App extends Component{
       _article = <ReadContent title={_title} desc={_desc}></ReadContent>
     }else if(this.state.mode === 'read'){
       var _content = this.getReadContent();
-      _article = <ReadContent title={_content._title} desc={_content._desc}></ReadContent>
-      
+      _article = <ReadContent title={_content.title} desc={_content.desc}></ReadContent>
+
     }else if(this.state.mode === 'create'){
       _article = <CreateContent onSubmit={function(_title,_desc){
         //add content to this.state.contents
@@ -134,6 +133,7 @@ class App extends Component{
         </Control>
 
         {/* <Content title={_title} desc={_desc}></Content> */}
+       
         {this.getContent()}
       </div>
     );
