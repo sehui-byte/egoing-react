@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 
 class Subject extends Component{
   render(){
+    console.log('Subject render');
     return (
       //하나의 최상위 태그만 써야 한다
       <header>

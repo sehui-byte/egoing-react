@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 
 class TOC extends Component{
+  //변화가 있을 때만 렌더링하도록
+  shouldComponentUpdate(newProps, newState){
+    if(this.props.data === newProps.data){
+      return false;
+    }
+    return true;
+  }
   render(){
+    console.log('TOC render');
     var data = this.props.data;
     var i = 0;
     var lists = [];
